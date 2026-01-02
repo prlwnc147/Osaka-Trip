@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>OSAKA TRIP 2026 🇯🇵</title>
+    
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600;700&family=Sarabun:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        :root {
+            --primary: #1a237e; /* Deep Blue */
+            --accent: #ff4081;  /* Pink Accent */
+            --bg: #f8f9fa;
+            --white: #ffffff;
+            --shadow: 0 8px 20px rgba(0,0,0,0.08);
+            --radius: 20px;
+        }
+
+        * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+        body {
+            font-family: 'Sarabun', sans-serif;
+            background-color: var(--bg);
+            margin: 0; padding: 0;
+            color: #333;
+            /* Safe area for iPhone notched screens */
+            padding-top: env(safe-area-inset-top);
+            padding-bottom: env(safe-area-inset-bottom);
+        }
+
+        /* Hero Section */
+        .hero {
+            /* Changed to brighter Osaka Castle with Sakura & Blue/Pink Overlay */
+            background: linear-gradient(rgba(26, 35, 126, 0.4), rgba(255, 64, 129, 0.2)), url('https://cdn.cheapoguides.com/wp-content/uploads/sites/3/2020/06/osaka-dotonbori-iStock-1138049211-1024x683.jpg?auto=format&fit=crop&w=800&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 60px 20px 40px; /* Increased padding */
+            border-bottom-left-radius: 30px;
+            border-bottom-right-radius: 30px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Removed pattern overlay to show image clearly */
+        .hero::before {
+            display: none; 
+        }
+
+        h1 { font-family: 'Prompt', sans-serif; margin: 0; font-size: 1.8rem; font-weight: 700; position: relative; z-index: 1; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
+        .subtitle { font-size: 0.9rem; opacity: 0.9; margin-top: 5px; position: relative; z-index: 1; text-shadow: 1px 1px 2px rgba(0,0,0,0.5); }
+
+        /* Container */
+        .container {
+            padding: 25px 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Section Title */
+        .section-title {
+            font-family: 'Prompt', sans-serif;
+            font-size: 1.1rem;
+            color: #1a237e;
+            margin: 10px 0 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .section-title i { color: var(--accent); }
+
+        /* Grid Layout */
+        .menu-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+
+        /* Card Button Style */
+        .menu-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            text-decoration: none;
+            color: #333;
+            box-shadow: var(--shadow);
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: 1px solid rgba(0,0,0,0.02);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .menu-card:active { transform: scale(0.98); }
+
+        .card-icon {
+            width: 45px;
+            height: 45px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .card-content { flex-grow: 1; }
+        .card-title { font-family: 'Prompt', sans-serif; font-weight: 600; font-size: 1rem; margin-bottom: 2px; }
+        .card-desc { font-size: 0.8rem; color: #777; }
+        
+        .card-arrow { color: #ccc; font-size: 0.9rem; }
+
+        /* Color Variations */
+        .theme-pink .card-icon { background: #fce4ec; color: #d81b60; }
+        .theme-blue .card-icon { background: #e3f2fd; color: #1565c0; }
+        .theme-orange .card-icon { background: #fff3e0; color: #ef6c00; }
+        .theme-purple .card-icon { background: #f3e5f5; color: #7b1fa2; }
+        .theme-green .card-icon { background: #e8f5e9; color: #2e7d32; }
+        
+        /* Essentials Section (2 columns) */
+        .essentials-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .essential-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 20px;
+            text-align: center;
+            text-decoration: none;
+            box-shadow: var(--shadow);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .essential-icon {
+            width: 50px; height: 50px;
+            border-radius: 50%;
+            background: #e8eaf6;
+            color: #1a237e;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.4rem;
+        }
+        
+        .essential-title { font-family: 'Prompt', sans-serif; font-weight: 600; color: #333; font-size: 0.95rem; }
+
+        /* Floating Info */
+        .info-bubble {
+            background: #fff9c4;
+            color: #f57f17;
+            padding: 10px 15px;
+            border-radius: 10px;
+            font-size: 0.85rem;
+            text-align: center;
+            margin-top: 20px;
+            border: 1px dashed #fbc02d;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="hero">
+        <div style="font-size:2.5rem; margin-bottom:5px;"
+        <h1>Japan</h1>
+        </div>
+        <h1>OSAKA TRIP 2026</h1>
+        <div class="subtitle">Travel Dashboard</div>
+    </div>
+
+    <div class="container">
+        
+        <!-- ESSENTIALS -->
+        <h2 class="section-title"><i class="fa-solid fa-star"></i> Essentials</h2>
+        <div class="essentials-grid">
+            <!-- Link to Ticket Summary File -->
+            <a href="Tickets_Passes_Tips_History.html" class="essential-card">
+                <div class="essential-icon"><i class="fa-solid fa-ticket"></i></div>
+                <div class="essential-title">Tickets Pass & Tips</div>
+            </a>
+            <!-- Link to QR Maps File -->
+            <a href="QR_Maps.html" class="essential-card">
+                <div class="essential-icon"><i class="fa-solid fa-map-location-dot"></i></div>
+                <div class="essential-title">Map QR Codes</div>
+            </a>
+        </div>
+
+        <!-- DAILY ITINERARY -->
+        <h2 class="section-title"><i class="fa-regular fa-calendar-days"></i> Daily Trip</h2>
+        <div class="menu-grid">
+            
+            <!-- Day 1 -->
+            <a href="Day1_ARRIVAL & SHOPPING.html" class="menu-card theme-pink">
+                <div class="card-icon"><i class="fa-solid fa-plane-arrival"></i></div>
+                <div class="card-content">
+                    <div class="card-title">Day 1: Arrival</div>
+                    <div class="card-desc">Shopping Shinsaibashi</div>
+                </div>
+                <div class="card-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+            </a>
+
+            <!-- Day 2 -->
+            <a href="Day2_Osaka_Skyline_Ocean.html" class="menu-card theme-blue">
+                <div class="card-icon"><i class="fa-solid fa-water"></i></div>
+                <div class="card-content">
+                    <div class="card-title">Day 2: Skyline & Ocean</div>
+                    <div class="card-desc">Umeda / Aquarium / Yakiniku</div>
+                </div>
+                <div class="card-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+            </a>
+
+            <!-- Day 3 -->
+            <a href="Day3_Osaka_Heritage.html" class="menu-card theme-orange">
+                <div class="card-icon"><i class="fa-solid fa-gopuram"></i></div>
+                <div class="card-content">
+                    <div class="card-title">Day 3: Heritage & Retro</div>
+                    <div class="card-desc">Castle / Shinsekai / Abeno</div>
+                </div>
+                <div class="card-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+            </a>
+
+            <!-- Day 4 -->
+            <a href="Day4_Kyoto_Kimono.html" class="menu-card theme-purple">
+                <div class="card-icon"><i class="fa-solid fa-person-dress"></i></div>
+                <div class="card-content">
+                    <div class="card-title">Day 4: Kyoto Kimono</div>
+                    <div class="card-desc">Kiyomizu-dera / Gion</div>
+                </div>
+                <div class="card-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+            </a>
+
+            <!-- Day 5 -->
+            <a href="Day5_Uji_Matcha.html" class="menu-card theme-green">
+                <div class="card-icon"><i class="fa-solid fa-mug-hot"></i></div>
+                <div class="card-content">
+                    <div class="card-title">Day 5: Uji Matcha</div>
+                    <div class="card-desc">Byodo-in / Dotonbori Night</div>
+                </div>
+                <div class="card-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+            </a>
+
+            <!-- Day 6 -->
+            <a href="Day6_Easy_Complete.html" class="menu-card theme-orange">
+                <div class="card-icon"><i class="fa-solid fa-bag-shopping"></i></div>
+                <div class="card-content">
+                    <div class="card-title">Day 6: Easy & Complete</div>
+                    <div class="card-desc">Kuromon / Outlet</div>
+                </div>
+                <div class="card-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+            </a>
+            
+            <!-- Day 7 -->
+            <a href="#" class="menu-card theme-blue">
+                <div class="card-icon"><i class="fa-solid fa-plane-departure"></i></div>
+                <div class="card-content">
+                    <div class="card-title">Day 7: Departure</div>
+                    <div class="card-desc">Last Shopping / Flight Back</div>
+                </div>
+                <div class="card-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+            </a>
+
+        </div>
+
+        <div class="info-bubble">
+            <i class="fa-solid fa-circle-info"></i> กรุณาบันทึกไฟล์ HTML ทั้งหมดไว้ในโฟลเดอร์เดียวกันเพื่อให้ลิงก์ทำงานได้ถูกต้อง
+        </div>
+
+    </div>
+
+</body>
+</html>
